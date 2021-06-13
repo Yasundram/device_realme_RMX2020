@@ -112,6 +112,10 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.basic.RMX2020
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
