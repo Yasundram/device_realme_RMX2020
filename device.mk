@@ -25,9 +25,6 @@ $(call inherit-product-if-exists, vendor/realme/RMX2020/RMX2020-vendor.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Parts
-$(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
-
 PRODUCT_SHIPPING_API_LEVEL := 29
 
 # VNDK
@@ -43,8 +40,7 @@ TARGET_SCREEN_WIDTH := 720
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    GoogleCameraGo
+    audio.a2dp.default
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
@@ -72,6 +68,10 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhwbinder
 
+# Kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/kernel:kernel
+
 # IMS
 PRODUCT_PACKAGES += \
     mtk-ims \
@@ -84,8 +84,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.mt6768.rc \
-    fstab.mt6768 \
-    perf_profile.sh
+    fstab.mt6768
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
