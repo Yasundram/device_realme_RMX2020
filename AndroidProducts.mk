@@ -16,3 +16,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/octavi_RMX2020.mk
+COMMON_LUNCH_CHOICES := \
+        octavi_RMX2020-eng \
+        octavi_RMX2020-user \
+        octavi_RMX2020-userdebug
